@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 // material-ui
 import { styled, useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import { AppBar, Box, CssBaseline, Toolbar, useMediaQuery } from '@mui/material';
 
 // project imports
@@ -62,11 +63,21 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({
     })
 }));
 
+const useStyles = makeStyles({	
+    root:{
+        paddingBottom: 0,
+        paddingTop: 6
+    },
+    mainContent:{
+        marginTop: 70
+    }
+});
 // ==============================|| MAIN LAYOUT ||============================== //
 
 const MainLayout = () => {
     const theme = useTheme();
     const matchDownMd = useMediaQuery(theme.breakpoints.down('lg'));
+    const classes = useStyles()
 
     // Handle left drawer
     const leftDrawerOpened = useSelector((state) => state.customization.opened);
@@ -94,7 +105,11 @@ const MainLayout = () => {
                     transition: leftDrawerOpened ? theme.transitions.create('width') : 'none'
                 }}
             >
-                <Toolbar>
+                <Toolbar
+                    classes={{
+                        root: classes.root
+                    }}
+                >
                     <Header handleLeftDrawerToggle={handleLeftDrawerToggle} />
                 </Toolbar>
             </AppBar>
@@ -103,8 +118,7 @@ const MainLayout = () => {
             <Sidebar drawerOpen={leftDrawerOpened} drawerToggle={handleLeftDrawerToggle} />
 
             {/* main content */}
-            <Main theme={theme} open={leftDrawerOpened}>
-                {/* breadcrumb */}
+            <Main className={classes.mainContent} theme={theme} open={leftDrawerOpened}>
                 <Breadcrumbs separator={IconChevronRight} navigation={navigation} icon title rightAlign />
                 <Outlet />
             </Main>
