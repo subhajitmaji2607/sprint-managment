@@ -65,8 +65,9 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({
 
 const useStyles = makeStyles({	
     root:{
-        paddingBottom: 0,
-        paddingTop: 6
+        paddingBottom: 4,
+        paddingTop: 6,
+        boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px;'
     },
     mainContent:{
         marginTop: 70

@@ -13,6 +13,7 @@ import config from 'config';
 
 // assets
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { fontSize } from '@mui/system';
 
 // ==============================|| SIDEBAR MENU LIST ITEMS ||============================== //
 
@@ -82,7 +83,7 @@ const NavItem = ({ item, level }) => {
             <ListItemIcon sx={{ my: 'auto', minWidth: !item?.icon ? 18 : 36 }}>{itemIcon}</ListItemIcon>
             <ListItemText
                 primary={
-                    <Typography variant={customization.isOpen.findIndex((id) => id === item.id) > -1 ? 'h5' : 'body1'} color="inherit">
+                    <Typography style={{fontSize: 15}} variant={customization.isOpen.findIndex((id) => id === item.id) > -1 ? 'h5' : 'body1'} color="inherit">
                         {item.title}
                     </Typography>
                 }
