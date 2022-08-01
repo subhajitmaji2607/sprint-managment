@@ -70,7 +70,10 @@ const useStyles = makeStyles({
         boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px;'
     },
     mainContent:{
-        marginTop: 70
+        marginTop: 70,
+        display: 'flex',
+        flexDirection: 'column',
+        paddingBottom: 0
     }
 });
 // ==============================|| MAIN LAYOUT ||============================== //

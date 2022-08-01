@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { Avatar, Chip, ListItemButton, ListItemIcon, ListItemText, Typography, useMediaQuery } from '@mui/material';
+import { Avatar, Chip, ListItemButton, ListItemIcon, ListItemText, Typography, useMediaQuery,Icon } from '@mui/material';
 
 // project imports
 import { MENU_OPEN, SET_MENU } from 'store/actions';
@@ -23,18 +23,18 @@ const NavItem = ({ item, level }) => {
     const customization = useSelector((state) => state.customization);
     const matchesSM = useMediaQuery(theme.breakpoints.down('lg'));
 
-    const Icon = item.icon;
-    const itemIcon = item?.icon ? (
-        <Icon stroke={1.5} size="1.3rem" />
-    ) : (
-        <FiberManualRecordIcon
-            sx={{
-                width: customization.isOpen.findIndex((id) => id === item?.id) > -1 ? 8 : 6,
-                height: customization.isOpen.findIndex((id) => id === item?.id) > -1 ? 8 : 6
-            }}
-            fontSize={level > 0 ? 'inherit' : 'medium'}
-        />
-    );
+    // const Icon = item.icon;
+    // const itemIcon = item?.icon ? (
+    //     <Icon stroke={1.5} size="1.3rem" />
+    // ) : (
+    //     <FiberManualRecordIcon
+    //         sx={{
+    //             width: customization.isOpen.findIndex((id) => id === item?.id) > -1 ? 8 : 6,
+    //             height: customization.isOpen.findIndex((id) => id === item?.id) > -1 ? 8 : 6
+    //         }}
+    //         fontSize={level > 0 ? 'inherit' : 'medium'}
+    //     />
+    // );
 
     let itemTarget = '_self';
     if (item.target) {
@@ -80,7 +80,9 @@ const NavItem = ({ item, level }) => {
             selected={customization.isOpen.findIndex((id) => id === item.id) > -1}
             onClick={() => itemHandler(item.id)}
         >
-            <ListItemIcon sx={{ my: 'auto', minWidth: !item?.icon ? 18 : 36 }}>{itemIcon}</ListItemIcon>
+            <ListItemIcon sx={{ my: 'auto', minWidth: !item?.icon ? 18 : 36 }}>
+                <Icon>{item.icon}</Icon>
+            </ListItemIcon>
             <ListItemText
                 primary={
                     <Typography style={{fontSize: 15}} variant={customization.isOpen.findIndex((id) => id === item.id) > -1 ? 'h5' : 'body1'} color="inherit">

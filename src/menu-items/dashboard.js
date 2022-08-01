@@ -15,7 +15,7 @@ const dashboard = {
             title: 'Dashboard',
             type: 'item',
             url: '/dashboard',
-            icon: icons.IconDashboard,
+            icon: 'dashboard',
             breadcrumbs: false
         },
         {
@@ -23,7 +23,7 @@ const dashboard = {
             title: 'Test',
             type: 'item',
             url: '/test',
-            icon: icons.IconAward,
+            icon: 'cruelty_free',
             breadcrumbs: false
         }
     ]
