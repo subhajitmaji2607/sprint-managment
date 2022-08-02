@@ -28,7 +28,7 @@ function CardSection() {
             <Box sx={{ width: 320, height: 80 }}>
                 <GeneralCard
                     data={96}
-                    title={"Total No of Task Inprogres"}
+                    title={"Total No of Task In progress"}
                     backGroundColor="#ffeb88"
                     icon="task"
                     color="rgb(237 108 79)"

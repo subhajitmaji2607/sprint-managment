@@ -38,7 +38,7 @@ const Sidebar = ({ drawerOpen, drawerToggle, window }) => {
                     <LogoSection />
                 </Box>
             </Box>
-            <BrowserView>
+            <BrowserView style={{backgroundColor:'#f5f5f5'}}>
                 <div style={{
                     // border: '2px solid black',
                     height: '180px',
@@ -49,7 +49,7 @@ const Sidebar = ({ drawerOpen, drawerToggle, window }) => {
                 }}>
                     
                     <div style={{
-                        border: '2px solid black',
+                        // border: '2px solid black',
                         height: '70px',
                         width:'70px',
                         borderRadius: '50%',
@@ -57,7 +57,7 @@ const Sidebar = ({ drawerOpen, drawerToggle, window }) => {
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}>
-                        <Avatar src={User1} style={{height:70,width:70,objectFit:'cover'}}/>
+                        <Avatar src="/broken-image.jpg" style={{height:70,width:70,objectFit:'cover'}}/>
                     </div>
                     
                     <div style={{fontSize: '1.3rem',fontWeight:600}}>
@@ -102,7 +102,7 @@ const Sidebar = ({ drawerOpen, drawerToggle, window }) => {
     const container = window !== undefined ? () => window.document.body : undefined;
 
     return (
-        <Box component="nav" sx={{ flexShrink: { md: 0 }, width: matchUpMd ? drawerWidth : 'auto' }} aria-label="mailbox folders">
+        <Box component="nav" style={{backgroundColor:'#f5f5f5'}} sx={{ flexShrink: { md: 0 }, width: matchUpMd ? drawerWidth : 'auto' }} aria-label="mailbox folders">
             <Drawer
                 container={container}
                 variant={matchUpMd ? 'persistent' : 'temporary'}

@@ -11,11 +11,19 @@ const dashboard = {
     type: 'group',
     children: [
         {
-            id: 'default',
+            id: 'dashboard',
             title: 'Dashboard',
             type: 'item',
             url: '/dashboard',
             icon: 'dashboard',
+            breadcrumbs: false
+        },
+        {
+            id: 'email',
+            title: 'Email',
+            type: 'item',
+            url: '/email',
+            icon: 'mail',
             breadcrumbs: false
         },
         {

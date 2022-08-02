@@ -62,15 +62,15 @@ function ProjectSummary() {
                     <div className={classes.itemData}>{6}</div>
                 </div>
                 <div className={classes.item}>
-                    Current Sprint
+                    Ongoing Sprint
                     <div className={classes.itemData}>{'sprint-6'}</div>
                 </div>
                 <div className={classes.item}>
-                    Current Sprint End Date
+                    Ongoing Sprint End Date
                     <div className={classes.itemData}>{new Date().toDateString()}</div>
                 </div>
                 <div className={classes.item}>
-                    work complete percentage
+                    Task completed
                     <div className={classes.itemData}>{53}%</div>
                 </div>
             </div>
